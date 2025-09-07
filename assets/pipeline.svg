@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="360" viewBox="0 0 980 360" fill="none">
+  <style>
+    .title { font: bold 22px sans-serif; fill: #0f172a; }
+    .label { font: 14px sans-serif; fill: #0f172a; }
+    .small { font: 12px sans-serif; fill: #334155; }
+    .box { fill: #ffffff; stroke: #e2e8f0; stroke-width: 2; rx: 10; }
+    .accent { fill: #f8fafc; stroke: #94a3b8; }
+    .arrow { stroke: #64748b; stroke-width: 2; marker-end: url(#arrowhead); }
+  </style>
+
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b" />
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#94a3b8" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <rect x="10" y="10" width="960" height="340" fill="url(#grad)" rx="16"/>
+  <text x="490" y="42" text-anchor="middle" class="title">Zero-Shot Object Detection & Segmentation with Gemini</text>
+
+  <!-- Input Image -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="90" width="180" height="200" class="box"/>
+    <text x="130" y="120" text-anchor="middle" class="label">Input Image</text>
+    <rect x="60" y="140" width="140" height="120" class="accent"/>
+    <text x="130" y="210" text-anchor="middle" class="small">RGB • JPG/PNG</text>
+  </g>
+
+  <!-- Prompt -->
+  <g filter="url(#shadow)">
+    <rect x="260" y="90" width="220" height="200" class="box"/>
+    <text x="370" y="120" text-anchor="middle" class="label">Structured Prompt</text>
+    <text x="370" y="160" text-anchor="middle" class="small">classes: [person, car, dog]</text>
+    <text x="370" y="180" text-anchor="middle" class="small">response_schema: JSON</text>
+    <text x="370" y="200" text-anchor="middle" class="small">mime_type: application/json</text>
+  </g>
+
+  <!-- Model -->
+  <g filter="url(#shadow)">
+    <rect x="520" y="90" width="200" height="200" class="box"/>
+    <text x="620" y="120" text-anchor="middle" class="label">Gemini Vision Model</text>
+    <text x="620" y="160" text-anchor="middle" class="small">gemini-1.5-pro (or newer)</text>
+    <text x="620" y="180" text-anchor="middle" class="small">Multimodal Inference</text>
+  </g>
+
+  <!-- Output -->
+  <g filter="url(#shadow)">
+    <rect x="760" y="90" width="180" height="200" class="box"/>
+    <text x="850" y="120" text-anchor="middle" class="label">Detections</text>
+    <text x="850" y="160" text-anchor="middle" class="small">bbox + polygon</text>
+    <text x="850" y="180" text-anchor="middle" class="small">confidence ∈ [0..1]</text>
+    <text x="850" y="200" text-anchor="middle" class="small">JSON Output</text>
+  </g>
+
+  <!-- Arrows -->
+  <line x1="220" y1="190" x2="260" y2="190" class="arrow"/>
+  <line x1="480" y1="190" x2="520" y2="190" class="arrow"/>
+  <line x1="720" y1="190" x2="760" y2="190" class="arrow"/>
+</svg>
